@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://nanalock11.github.io">
-  <title>1.2数据、变量与内存 | 阿韩的博客分享</title>
+  <title>2.2执行上下文与执行上下文栈 | 阿韩的博客分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据、变量与内存1.什么是数据？存储于内存中代表特定信息的东西，本质是二进制数   具有可读性、可传递性   万物皆数据，函数也是数据">
-<meta name="keywords" content="数据、变量与内存">
+  <meta name="description" content="2.2执行上下文与执行上下文栈1.变量声明提升 通过var定义的变量，在定义语句之前就可以访问到（var一个语句，在var之前就可以访问到） 值：undefined">
+<meta name="keywords" content="函数高级">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1.2数据、变量与内存">
-<meta property="og:url" content="https:&#x2F;&#x2F;nanalock11.github.io&#x2F;2019&#x2F;12&#x2F;07&#x2F;1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98&#x2F;index.html">
+<meta property="og:title" content="2.2执行上下文与执行上下文栈">
+<meta property="og:url" content="https:&#x2F;&#x2F;nanalock11.github.io&#x2F;2020&#x2F;01&#x2F;10&#x2F;2.2%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88&#x2F;index.html">
 <meta property="og:site_name" content="阿韩的博客分享">
-<meta property="og:description" content="数据、变量与内存1.什么是数据？存储于内存中代表特定信息的东西，本质是二进制数   具有可读性、可传递性   万物皆数据，函数也是数据">
+<meta property="og:description" content="2.2执行上下文与执行上下文栈1.变量声明提升 通过var定义的变量，在定义语句之前就可以访问到（var一个语句，在var之前就可以访问到） 值：undefined">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-15T00:52:20.275Z">
+<meta property="og:updated_time" content="2020-01-15T07:09:56.728Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="阿韩的博客分享" type="application/atom+xml">
@@ -181,26 +181,26 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1.2数据、变量与内存" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2.2执行上下文及执行上下文栈" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      1.2数据、变量与内存
+      2.2执行上下文与执行上下文栈
     </h1>
   
 
         
         
-<a href="/2019/12/07/1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98/" class="archive-article-date">
-  	<time datetime="2019-12-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
+<a href="/2020/01/10/2.2%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/" class="archive-article-date">
+  	<time datetime="2020-01-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-10</time>
 </a>
         
       </header>
       <div align="center" class="post-count">
-        字数：746字 | 预计阅读时长：2分钟
+        字数：306字 | 预计阅读时长：1分钟
         </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -210,40 +210,39 @@
           <span id="busuanzi_value_page_pv"></span>
           次
           </div>
-        <h2 id="数据、变量与内存"><a href="#数据、变量与内存" class="headerlink" title="数据、变量与内存"></a>数据、变量与内存</h2><h3 id="1-什么是数据？"><a href="#1-什么是数据？" class="headerlink" title="1.什么是数据？"></a>1.什么是数据？</h3><p>存储于内存中代表特定信息的东西，本质是二进制数  </p>
-<p>具有可读性、可传递性  </p>
-<p>万物皆数据，函数也是数据<a id="more"></a></p>
-<h3 id="2-什么是内存？"><a href="#2-什么是内存？" class="headerlink" title="2.什么是内存？"></a>2.什么是内存？</h3><p>内存条通电后产生的存储空间（临时性空间 ）；</p>
-<p>生命周期：内存条–&gt;通电产生存储空间-&gt;存储各种数据-&gt;断电内存全部消失  </p>
-<p> 一块小内存中的数据：<strong>内部存储的数据</strong> ，<strong>地址值</strong></p>
-<p>内存的分类（两种）：  <strong>栈</strong>：变量；   <strong>堆</strong>：对象 ；     </p>
-<p>释放机制：  <strong>自动释放</strong>：栈空间的局部变量（空间小）；  <strong>垃圾回调器回调</strong>：堆空间的垃圾变量（空间大）；  </p>
-<h3 id="3-什么是变量？"><a href="#3-什么是变量？" class="headerlink" title="3.什么是变量？"></a>3.什么是变量？</h3><p>定义：变量名可以变化的量，由<strong>变量名</strong>和<strong>变量值</strong>组成；</p>
-<p>一个变量对应一块内存，变量名用来查找内存，变量值就是内存中保存的数据；</p>
-<h3 id="4-数据、变量与内存的关系"><a href="#4-数据、变量与内存的关系" class="headerlink" title="4.数据、变量与内存的关系"></a>4.数据、变量与内存的关系</h3><p><strong>内存</strong>是一个容器，用来存储程序运行所需要操作的数据；</p>
-<p><strong>变量</strong>是内存的标识，通过变量来找到相对应的内存，进而操作数据</p>
-<h3 id="5-相关问题"><a href="#5-相关问题" class="headerlink" title="5.相关问题"></a>5.相关问题</h3><h4 id="5-1关于赋值与内存的问题"><a href="#5-1关于赋值与内存的问题" class="headerlink" title="5.1关于赋值与内存的问题"></a>5.1关于赋值与内存的问题</h4><p>问题：<code>var a=xxx</code> 问<code>a</code>内存中到底保存的是什么？  </p>
-<p>答：<code>xxx</code>是一个变量，可能是基本数据，也可能是地址内存；</p>
-<p>当<code>xxx</code>为基本数据时，保存的就是这个数据；</p>
-<p>当<code>xxx</code>为对象是，保存的的是对象的地址值；</p>
-<h4 id="5-2关于引用变量赋值的问题"><a href="#5-2关于引用变量赋值的问题" class="headerlink" title="5.2关于引用变量赋值的问题"></a>5.2关于引用变量赋值的问题</h4><p>1.两个引用变量指向同一个对象，通过其中一个变修改对象内部数据，另一个变量的内部数据也随之改变。  </p>
-<p>举例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>:<span class="string">"nana"</span>&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj2 = obj1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">obj2.name = <span class="string">"myy"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( obj1 )     <span class="comment">// myy</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rename</span>(<span class="params">obj</span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    obj.name = <span class="string">"nini"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">rename( obj2 )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( obj1,obj2 )    <span class="comment">//nini</span></span></pre></td></tr></table></figure>
-
-<p>2.两个引用变量指向同一个对象，让其中一个引用变量指向其他的对象，另外的变量依然指向之前的对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;name:<span class="string">"nana"</span>&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    a=&#123;name:<span class="string">"nini"</span>,age:<span class="string">"13"</span>&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">b.name =<span class="string">'myy'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    console.log(b.name ,a.name,a.age) <span class="comment">//myy nini 13</span></span></pre></td></tr></table></figure>
+        <h2 id="2-2执行上下文与执行上下文栈"><a href="#2-2执行上下文与执行上下文栈" class="headerlink" title="2.2执行上下文与执行上下文栈"></a>2.2执行上下文与执行上下文栈</h2><h3 id="1-变量声明提升"><a href="#1-变量声明提升" class="headerlink" title="1.变量声明提升"></a>1.变量声明提升</h3><ul>
+<li>通过var定义的变量，在定义语句之前就可以访问到（var一个语句，在var之前就可以访问到）</li>
+<li>值：undefined<a id="more"></a></li>
+</ul>
+<h3 id="2-函数声明提升"><a href="#2-函数声明提升" class="headerlink" title="2.函数声明提升"></a>2.函数声明提升</h3><ul>
+<li>通过function声明的函数，在声明之前就可以直接调用</li>
+<li>值：函数定义（对象）</li>
+<li>函数提升只能使用函数声明的方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> a=<span class="number">3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> fn()    <span class="comment">//可调用，函数提升</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(a)     <span class="comment">//undefined   变量提升</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> a=<span class="number">4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">fn1()    <span class="comment">//不能调用，变量提升//TypeError: fn1 is not a function</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn1=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(<span class="number">111</span>)     </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 
 
 
-<h4 id="5-3关于数据传递问题"><a href="#5-3关于数据传递问题" class="headerlink" title="5.3关于数据传递问题"></a>5.3关于数据传递问题</h4><p>在JS调用函数传递引用变量参数时，是值传递还是引用传递？  </p>
-<p>​    有可能是值（基本值）的传递，也有可能是引用（地址值）传递。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="number">4</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a</span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    a = a + <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">fn(a)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( a )     <span class="comment">//4</span></span></pre></td></tr></table></figure>
-
-<h4 id="5-4JS引擎如何管理内存？"><a href="#5-4JS引擎如何管理内存？" class="headerlink" title="5.4JS引擎如何管理内存？"></a>5.4JS引擎如何管理内存？</h4><p><strong>1.内存生命周期：</strong></p>
-<p>​    分配所需要的内存–&gt;使用分配到的内存–&gt;不需要时将其释放</p>
-<p><strong>2.释放内存：</strong></p>
-<p>​    为执行的函数分配内存栈空间内存：函数执行完毕后自动释放；</p>
-<p>​    存储对象的堆空间内存：当内存没有引用指针时，对象成为垃圾对象，垃圾回收器进行回收释放此内存。</p>
+<h3 id="3-执行上下文"><a href="#3-执行上下文" class="headerlink" title="3.执行上下文"></a>3.执行上下文</h3><p>1.代码分类（位置）</p>
+<ul>
+<li>全局代码</li>
+<li>函数（局部）代码</li>
+</ul>
+<p>2.全局执行上下文</p>
+<ul>
+<li>在执行全局代码前将window确定为全局执行上下文</li>
+<li>对全局数据进行预处理<ul>
+<li>var定义的全局变量==&gt;undefined,添加为window的属性</li>
+<li>function声明的全局函数==&gt;赋值(fun),添加为window的方法</li>
+<li>this==&gt;赋值（window）</li>
+</ul>
+</li>
+<li>开始执行全局代码</li>
+</ul>
+<p>3.函数执行上下文</p>
+<ul>
+<li>在调用函数，准备执行函数体之前，创建对应的函数执行上下文对象</li>
+</ul>
 
       
       
@@ -255,7 +254,7 @@
     
     <br>
     <strong>本文链接：</strong>
-    https://nanalock11.github.io/2019/12/07/1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98/
+    https://nanalock11.github.io/2020/01/10/2.2%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/
     <br>
     <strong>版权声明：</strong>
     本作品采用
@@ -304,7 +303,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">JavaScript、基础总结深入</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">JavaScript、函数高级、执行上下文</a>
         		</li>
       		
 		</ul>
@@ -360,9 +359,9 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nanalock11.github.io/2019/12/07/1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nanalock11.github.io/2020/01/10/2.2%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/" alt="微信分享二维码">
       
-      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://nanalock11.github.io/2019/12/07/1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98/" alt="微信分享二维码"> -->
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://nanalock11.github.io/2020/01/10/2.2%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -376,18 +375,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/07/1.3%E5%85%B3%E4%BA%8E%E5%AF%B9%E8%B1%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/01/15/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          1.3关于对象
+          谷歌好用插件（末尾附下载链接）
         
       </div>
     </a>
   
   
-    <a href="/2019/12/07/1.4%E5%85%B3%E4%BA%8E%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">1.4关于函数</div>
+    <a href="/2020/01/01/2.1%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2.1原型与原型链</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -414,7 +413,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据、变量与内存"><span class="toc-number">1.</span> <span class="toc-text">数据、变量与内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是数据？"><span class="toc-number">1.1.</span> <span class="toc-text">1.什么是数据？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-什么是内存？"><span class="toc-number">1.2.</span> <span class="toc-text">2.什么是内存？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-什么是变量？"><span class="toc-number">1.3.</span> <span class="toc-text">3.什么是变量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-数据、变量与内存的关系"><span class="toc-number">1.4.</span> <span class="toc-text">4.数据、变量与内存的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-相关问题"><span class="toc-number">1.5.</span> <span class="toc-text">5.相关问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1关于赋值与内存的问题"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1关于赋值与内存的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2关于引用变量赋值的问题"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2关于引用变量赋值的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3关于数据传递问题"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3关于数据传递问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4JS引擎如何管理内存？"><span class="toc-number">1.5.4.</span> <span class="toc-text">5.4JS引擎如何管理内存？</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2执行上下文与执行上下文栈"><span class="toc-number">1.</span> <span class="toc-text">2.2执行上下文与执行上下文栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-变量声明提升"><span class="toc-number">1.1.</span> <span class="toc-text">1.变量声明提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-函数声明提升"><span class="toc-number">1.2.</span> <span class="toc-text">2.函数声明提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-执行上下文"><span class="toc-number">1.3.</span> <span class="toc-text">3.执行上下文</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -437,7 +436,7 @@
 
 
 
-  <meta name="keywords" content="数据、变量与内存,前端,JS,css">
+  <meta name="keywords" content="函数高级,前端,JS,css">
   
           </div>
         </div>

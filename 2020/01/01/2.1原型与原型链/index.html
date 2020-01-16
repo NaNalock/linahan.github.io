@@ -6,18 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://nanalock11.github.io">
-  <title>1.2数据、变量与内存 | 阿韩的博客分享</title>
+  <title>2.1原型与原型链 | 阿韩的博客分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据、变量与内存1.什么是数据？存储于内存中代表特定信息的东西，本质是二进制数   具有可读性、可传递性   万物皆数据，函数也是数据">
-<meta name="keywords" content="数据、变量与内存">
+  <meta name="description" content="2.1原型与原型链1.原型（prtotype）1.1函数的prototype属性 每个函数都有一个prototype属性，它默认指向一个object空对象（即称为原型对象）  作用：函数对象中有一个属性constructor，它指向函数对象。">
+<meta name="keywords" content="函数高级">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1.2数据、变量与内存">
-<meta property="og:url" content="https:&#x2F;&#x2F;nanalock11.github.io&#x2F;2019&#x2F;12&#x2F;07&#x2F;1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98&#x2F;index.html">
+<meta property="og:title" content="2.1原型与原型链">
+<meta property="og:url" content="https:&#x2F;&#x2F;nanalock11.github.io&#x2F;2020&#x2F;01&#x2F;01&#x2F;2.1%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE&#x2F;index.html">
 <meta property="og:site_name" content="阿韩的博客分享">
-<meta property="og:description" content="数据、变量与内存1.什么是数据？存储于内存中代表特定信息的东西，本质是二进制数   具有可读性、可传递性   万物皆数据，函数也是数据">
+<meta property="og:description" content="2.1原型与原型链1.原型（prtotype）1.1函数的prototype属性 每个函数都有一个prototype属性，它默认指向一个object空对象（即称为原型对象）  作用：函数对象中有一个属性constructor，它指向函数对象。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-15T00:52:20.275Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;f090e2168755b254.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;cfc9df7df447c7ef.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;daa0f55395478baf.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;c1dc66141f4225b2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;36cb15fc4b0905ea.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;ea154918760c6186.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;42482194444ce2da.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;5ca32e0300956d7a.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;f95f21f76afa1ab8.png">
+<meta property="og:updated_time" content="2020-01-15T07:09:49.742Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2020&#x2F;01&#x2F;f090e2168755b254.png">
   
     <link rel="alternative" href="/atom.xml" title="阿韩的博客分享" type="application/atom+xml">
   
@@ -181,26 +191,26 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1.2数据、变量与内存" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2.1原型与原型链" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      1.2数据、变量与内存
+      2.1原型与原型链
     </h1>
   
 
         
         
-<a href="/2019/12/07/1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98/" class="archive-article-date">
-  	<time datetime="2019-12-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
+<a href="/2020/01/01/2.1%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="archive-article-date">
+  	<time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-01</time>
 </a>
         
       </header>
       <div align="center" class="post-count">
-        字数：746字 | 预计阅读时长：2分钟
+        字数：819字 | 预计阅读时长：3分钟
         </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -210,40 +220,112 @@
           <span id="busuanzi_value_page_pv"></span>
           次
           </div>
-        <h2 id="数据、变量与内存"><a href="#数据、变量与内存" class="headerlink" title="数据、变量与内存"></a>数据、变量与内存</h2><h3 id="1-什么是数据？"><a href="#1-什么是数据？" class="headerlink" title="1.什么是数据？"></a>1.什么是数据？</h3><p>存储于内存中代表特定信息的东西，本质是二进制数  </p>
-<p>具有可读性、可传递性  </p>
-<p>万物皆数据，函数也是数据<a id="more"></a></p>
-<h3 id="2-什么是内存？"><a href="#2-什么是内存？" class="headerlink" title="2.什么是内存？"></a>2.什么是内存？</h3><p>内存条通电后产生的存储空间（临时性空间 ）；</p>
-<p>生命周期：内存条–&gt;通电产生存储空间-&gt;存储各种数据-&gt;断电内存全部消失  </p>
-<p> 一块小内存中的数据：<strong>内部存储的数据</strong> ，<strong>地址值</strong></p>
-<p>内存的分类（两种）：  <strong>栈</strong>：变量；   <strong>堆</strong>：对象 ；     </p>
-<p>释放机制：  <strong>自动释放</strong>：栈空间的局部变量（空间小）；  <strong>垃圾回调器回调</strong>：堆空间的垃圾变量（空间大）；  </p>
-<h3 id="3-什么是变量？"><a href="#3-什么是变量？" class="headerlink" title="3.什么是变量？"></a>3.什么是变量？</h3><p>定义：变量名可以变化的量，由<strong>变量名</strong>和<strong>变量值</strong>组成；</p>
-<p>一个变量对应一块内存，变量名用来查找内存，变量值就是内存中保存的数据；</p>
-<h3 id="4-数据、变量与内存的关系"><a href="#4-数据、变量与内存的关系" class="headerlink" title="4.数据、变量与内存的关系"></a>4.数据、变量与内存的关系</h3><p><strong>内存</strong>是一个容器，用来存储程序运行所需要操作的数据；</p>
-<p><strong>变量</strong>是内存的标识，通过变量来找到相对应的内存，进而操作数据</p>
-<h3 id="5-相关问题"><a href="#5-相关问题" class="headerlink" title="5.相关问题"></a>5.相关问题</h3><h4 id="5-1关于赋值与内存的问题"><a href="#5-1关于赋值与内存的问题" class="headerlink" title="5.1关于赋值与内存的问题"></a>5.1关于赋值与内存的问题</h4><p>问题：<code>var a=xxx</code> 问<code>a</code>内存中到底保存的是什么？  </p>
-<p>答：<code>xxx</code>是一个变量，可能是基本数据，也可能是地址内存；</p>
-<p>当<code>xxx</code>为基本数据时，保存的就是这个数据；</p>
-<p>当<code>xxx</code>为对象是，保存的的是对象的地址值；</p>
-<h4 id="5-2关于引用变量赋值的问题"><a href="#5-2关于引用变量赋值的问题" class="headerlink" title="5.2关于引用变量赋值的问题"></a>5.2关于引用变量赋值的问题</h4><p>1.两个引用变量指向同一个对象，通过其中一个变修改对象内部数据，另一个变量的内部数据也随之改变。  </p>
-<p>举例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>:<span class="string">"nana"</span>&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj2 = obj1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">obj2.name = <span class="string">"myy"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( obj1 )     <span class="comment">// myy</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rename</span>(<span class="params">obj</span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    obj.name = <span class="string">"nini"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">rename( obj2 )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( obj1,obj2 )    <span class="comment">//nini</span></span></pre></td></tr></table></figure>
+        <h2 id="2-1原型与原型链"><a href="#2-1原型与原型链" class="headerlink" title="2.1原型与原型链"></a>2.1原型与原型链</h2><h3 id="1-原型（prtotype）"><a href="#1-原型（prtotype）" class="headerlink" title="1.原型（prtotype）"></a>1.原型（prtotype）</h3><h4 id="1-1函数的prototype属性"><a href="#1-1函数的prototype属性" class="headerlink" title="1.1函数的prototype属性"></a>1.1函数的prototype属性</h4><ul>
+<li><p>每个函数都有一个<code>prototype</code>属性，它默认指向一个object空对象（即称为<strong>原型对象</strong>）</p>
+</li>
+<li><p>作用：函数对象中有一个属性<code>constructor</code>，它指向函数对象。<a id="more"></a></p>
+</li>
+<li><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>)</span>{}
+<span class="built_in">console</span>.log(Fun.prototype)       <span class="comment">//默认指向一个空对象</span>
+<span class="comment">//原型对象中的constructor指向函数对象</span>
+<span class="built_in">console</span>.log( Fun.prototype.constructor === Fun )     <span class="comment">//true</span>
+&lt;!--￼<span class="number">0</span>--&gt;
+</code></pre>
+</li>
+</ul>
+<h3 id="2-显式原型prototype与隐式原型-proto"><a href="#2-显式原型prototype与隐式原型-proto" class="headerlink" title="2.显式原型prototype与隐式原型__proto__"></a>2.显式原型<code>prototype</code>与隐式原型<code>__proto__</code></h3><p>1.每个函数<code>function</code>都有一个<code>prototype</code>,即<strong>显式原型</strong>（属性）</p>
+<p>2.每个实例对象都有一个<code>__proto__</code>,即<strong>隐式原型</strong>（属性）</p>
+<p>3.对象的隐式原型的值为其构造函数的显式原型的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;&#125;     <span class="comment">//内部语句：this.prototype=&#123;&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun=<span class="keyword">new</span> Fun      <span class="comment">//内部语句：this.__proto__=Fun.prototype</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(Fun.prototype===fun.__proto__)    <span class="comment">//true</span></span></pre></td></tr></table></figure>
 
-<p>2.两个引用变量指向同一个对象，让其中一个引用变量指向其他的对象，另外的变量依然指向之前的对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;name:<span class="string">"nana"</span>&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    a=&#123;name:<span class="string">"nini"</span>,age:<span class="string">"13"</span>&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">b.name =<span class="string">'myy'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    console.log(b.name ,a.name,a.age) <span class="comment">//myy nini 13</span></span></pre></td></tr></table></figure>
+<p><img src="https://ftp.bmp.ovh/imgs/2020/01/f090e2168755b254.png" alt="image-20191215113444797"></p>
+<p>4.内存结构图</p>
+<p>左边为堆，右边为栈</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2020/01/cfc9df7df447c7ef.png" alt="image-20191215114110954"></p>
+<p>5.总结：</p>
+<ul>
+<li>函数的<code>prototype</code>属性：在定义函数时添加的，默认值是一个空<code>object</code>对象</li>
+<li>对象的<code>__proto__</code>属性：创建对象时自动添加的，默认值为其构造函数的<code>prototype</code>属性</li>
+<li>程序员能直接操作显式原型，但不能直接操作隐式原型（ES6之前）</li>
+</ul>
+<h3 id="3-原型链"><a href="#3-原型链" class="headerlink" title="3.原型链"></a>3.原型链</h3><p>1.访问一个对象时：</p>
+<ul>
+<li>先在自身属性中查找，找到返回</li>
+<li>如果没有，再沿着<code>__proto__</code>这条链向上查找，找到返回</li>
+<li>如果最终没找到，返回undefined</li>
+</ul>
+<p>2.别名：隐式原型链</p>
+<p>3.作用：查找对象的属性（方法）</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2020/01/daa0f55395478baf.png" alt="image-20191215121407889"></p>
+<p>4.构造函数/原型/实体对象的关系（图解1）</p>
+<p><code>var o1=new Object()</code></p>
+<p><img src="https://ftp.bmp.ovh/imgs/2020/01/c1dc66141f4225b2.png" alt="image-20191215135546662"></p>
+<p>5.构造函数/原型/实体对象的关系（图解2）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Foo =<span class="keyword">new</span> <span class="built_in">Function</span>()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>= <span class="keyword">new</span> <span class="built_in">Function</span>()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有函数的__proto__都是一样的</span></span></pre></td></tr></table></figure>
+
+<p><img src="https://ftp.bmp.ovh/imgs/2020/01/36cb15fc4b0905ea.png" alt="image-20191220205623742"></p>
+<p>6.原型继承</p>
+<ul>
+<li><p>函数的显式原型指向的对象默认是空<code>Object</code>实例对象（但<code>Object</code>不满足）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun=<span class="keyword">new</span> Fun</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( Fun.prototype <span class="keyword">instanceof</span> <span class="built_in">Object</span> )  <span class="comment">//true</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.prototype <span class="keyword">instanceof</span> <span class="built_in">Object</span> )  <span class="comment">//false</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Function</span>.prototype <span class="keyword">instanceof</span> <span class="built_in">Object</span> )  <span class="comment">//true</span></span></pre></td></tr></table></figure>
 
 
 
-<h4 id="5-3关于数据传递问题"><a href="#5-3关于数据传递问题" class="headerlink" title="5.3关于数据传递问题"></a>5.3关于数据传递问题</h4><p>在JS调用函数传递引用变量参数时，是值传递还是引用传递？  </p>
-<p>​    有可能是值（基本值）的传递，也有可能是引用（地址值）传递。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="number">4</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a</span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    a = a + <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">fn(a)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( a )     <span class="comment">//4</span></span></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>所有函数都是<code>Function</code>的实例（包含<code>Function</code>）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Function</span>.prototype===<span class="built_in">Function</span>.__proto__)     <span class="comment">//true</span></span></pre></td></tr></table></figure>
 
-<h4 id="5-4JS引擎如何管理内存？"><a href="#5-4JS引擎如何管理内存？" class="headerlink" title="5.4JS引擎如何管理内存？"></a>5.4JS引擎如何管理内存？</h4><p><strong>1.内存生命周期：</strong></p>
-<p>​    分配所需要的内存–&gt;使用分配到的内存–&gt;不需要时将其释放</p>
-<p><strong>2.释放内存：</strong></p>
-<p>​    为执行的函数分配内存栈空间内存：函数执行完毕后自动释放；</p>
-<p>​    存储对象的堆空间内存：当内存没有引用指针时，对象成为垃圾对象，垃圾回收器进行回收释放此内存。</p>
+<ul>
+<li>Object的原型对象是原型链尽头</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.__proto__)  <span class="comment">//null</span></span></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>7.原型属性问题</p>
+<ul>
+<li><p>读取对象的属性值时：会自动到原型链中查找;</p>
+</li>
+<li><p>设置对象的属性值时：不会查找原型链，如果当前对象中没有此属性，职级添加此属性并设置值；</p>
+</li>
+<li><p>方法一般定义在原型中，属性一般通过构造函数定义在对象本身上；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params"></span>) </span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Fun.prototype.a=<span class="string">"aaa"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun1=<span class="keyword">new</span> Fun()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun2=<span class="keyword">new</span> Fun()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">fun2.a=<span class="string">"bbb"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fun1.a,fun2.a)     <span class="comment">//aaa,bbb</span></span></pre></td></tr></table></figure>
+
+<p><img src="https://ftp.bmp.ovh/imgs/2020/01/ea154918760c6186.png" alt="image-20191215130917124"></p>
+</li>
+</ul>
+<h3 id="4-探索instanceof"><a href="#4-探索instanceof" class="headerlink" title="4.探索instanceof"></a>4.探索instanceof</h3><ul>
+<li><p>表达式：A instanceof B</p>
+</li>
+<li><p>如果B函数的显式原型对象在A对象的原型链上，返回true，否则则返回false</p>
+</li>
+<li><p>Function是通过new自己产生的实例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f1=<span class="keyword">new</span> Foo();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(f1 <span class="keyword">instanceof</span> Foo)   <span class="comment">//true</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(f1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>)   <span class="comment">//true</span></span></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>  <img src="https://ftp.bmp.ovh/imgs/2020/01/42482194444ce2da.png" alt="image-20191215132228943"></p>
+<p><img src="https://ftp.bmp.ovh/imgs/2020/01/5ca32e0300956d7a.png" alt="image-20191215132413500"></p>
+<p><img src="https://ftp.bmp.ovh/imgs/2020/01/f95f21f76afa1ab8.png" alt="image-20191215132428020"></p>
+<h3 id="5-题型练习"><a href="#5-题型练习" class="headerlink" title="5.题型练习"></a>5.题型练习</h3><ul>
+<li><p>题型1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">A.prototype.n=<span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=<span class="keyword">new</span> A()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">A.prototype=&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    n:<span class="number">2</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    m:<span class="number">3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c=<span class="keyword">new</span> A()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(b.n,b.m,c.n,c.m)    <span class="comment">//1,undefined,2,3</span></span></pre></td></tr></table></figure>
+
+<ul>
+<li><p>题型2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.a=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a()'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.b=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b()'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f=<span class="keyword">new</span> F()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">f.a()   <span class="comment">//a()</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//f.b()   //Uncaught TypeError: f.b is not a function</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">F.a()   <span class="comment">//a()</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">F.b()   <span class="comment">//b()</span></span></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
 
       
       
@@ -255,7 +337,7 @@
     
     <br>
     <strong>本文链接：</strong>
-    https://nanalock11.github.io/2019/12/07/1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98/
+    https://nanalock11.github.io/2020/01/01/2.1%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/
     <br>
     <strong>版权声明：</strong>
     本作品采用
@@ -304,7 +386,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">JavaScript、基础总结深入</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">JavaScript、函数高级、原型与原型链</a>
         		</li>
       		
 		</ul>
@@ -360,9 +442,9 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nanalock11.github.io/2019/12/07/1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nanalock11.github.io/2020/01/01/2.1%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" alt="微信分享二维码">
       
-      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://nanalock11.github.io/2019/12/07/1.2%E6%95%B0%E6%8D%AE%E3%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E5%86%85%E5%AD%98/" alt="微信分享二维码"> -->
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://nanalock11.github.io/2020/01/01/2.1%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -376,18 +458,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/07/1.3%E5%85%B3%E4%BA%8E%E5%AF%B9%E8%B1%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/01/10/2.2%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          1.3关于对象
+          2.2执行上下文与执行上下文栈
         
       </div>
     </a>
   
   
-    <a href="/2019/12/07/1.4%E5%85%B3%E4%BA%8E%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">1.4关于函数</div>
+    <a href="/2019/12/07/1.1.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1.1数据类型</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -414,7 +496,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据、变量与内存"><span class="toc-number">1.</span> <span class="toc-text">数据、变量与内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是数据？"><span class="toc-number">1.1.</span> <span class="toc-text">1.什么是数据？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-什么是内存？"><span class="toc-number">1.2.</span> <span class="toc-text">2.什么是内存？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-什么是变量？"><span class="toc-number">1.3.</span> <span class="toc-text">3.什么是变量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-数据、变量与内存的关系"><span class="toc-number">1.4.</span> <span class="toc-text">4.数据、变量与内存的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-相关问题"><span class="toc-number">1.5.</span> <span class="toc-text">5.相关问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1关于赋值与内存的问题"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1关于赋值与内存的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2关于引用变量赋值的问题"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2关于引用变量赋值的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3关于数据传递问题"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3关于数据传递问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4JS引擎如何管理内存？"><span class="toc-number">1.5.4.</span> <span class="toc-text">5.4JS引擎如何管理内存？</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1原型与原型链"><span class="toc-number">1.</span> <span class="toc-text">2.1原型与原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-原型（prtotype）"><span class="toc-number">1.1.</span> <span class="toc-text">1.原型（prtotype）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1函数的prototype属性"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1函数的prototype属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-显式原型prototype与隐式原型-proto"><span class="toc-number">1.2.</span> <span class="toc-text">2.显式原型prototype与隐式原型__proto__</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-原型链"><span class="toc-number">1.3.</span> <span class="toc-text">3.原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-探索instanceof"><span class="toc-number">1.4.</span> <span class="toc-text">4.探索instanceof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-题型练习"><span class="toc-number">1.5.</span> <span class="toc-text">5.题型练习</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -437,7 +519,7 @@
 
 
 
-  <meta name="keywords" content="数据、变量与内存,前端,JS,css">
+  <meta name="keywords" content="函数高级,前端,JS,css">
   
           </div>
         </div>
